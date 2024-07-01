@@ -24,7 +24,7 @@
     color: #333;
   }
   
-  ul > li {
+ .main_contain_dev ul > li {
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
