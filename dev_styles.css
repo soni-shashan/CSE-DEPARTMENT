@@ -31,17 +31,19 @@
     /* You can also add some margins here to make it look prettier */
  }
  .main_contain_dev {
-     height: 65vh;
+     /* height: 65vh; */
      display: flex;
      flex-wrap: wrap;
      flex: 1;
      flex-direction: row;
      margin-left: 10vw;
      margin-top: 5vh;
+     margin-bottom: 2vh;
     }
     @media (max-width: 600px) {
         .main_contain_dev {
-            height: 150vh;
+            /* height: 150vh; */
+            margin-bottom: 2vh;
             display: flex;
             flex-wrap: wrap;
             flex: 1;
@@ -51,8 +53,7 @@
         }
          .main_contain_dev ul > li {
             display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-       /* You can also add some margins here to make it look prettier */
+            margin: 0px;
+            /* You can also add some margins here to make it look prettier */
         }
  }
