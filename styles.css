@@ -1,0 +1,52 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+}
+.navbar {
+    background-color: #212529;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.nav-link {
+    color: #ffffff;
+}
+.nav-link:hover {
+    color: blueviolet;
+}
+.social-icons {
+    font-size: 1.2rem;
+}
+.social-icons a {
+    color: #ffffff;
+    margin-left: 15px;
+}
+.social-icons a:hover {
+    color: #9bc4ed;
+    scale: 1.2;
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+.logo {
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    justify-self: center;
+}
+.logo header h5{
+    margin: 7px;
+}
