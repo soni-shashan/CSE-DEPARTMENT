@@ -25,7 +25,8 @@ body {
     color: blueviolet;
 }
 .social-icons {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    filter: drop-shadow(5px 5px 5px black);
 }
 .social-icons a {
     color: #ffffff;
@@ -33,7 +34,7 @@ body {
 }
 .social-icons a:hover {
     color: #9bc4ed;
-    scale: 1.2;
+    font-size: 1.6rem;
 }
 
 .logo img{
