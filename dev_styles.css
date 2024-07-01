@@ -41,16 +41,18 @@
     }
     @media (max-width: 600px) {
         .main_contain_dev {
-        height: 150vh;
-        display: flex;
-        flex-wrap: wrap;
-        flex: 1;
-        flex-direction: row;
-    }
-    .main_contain_dev ul > li {
-       display: inline-block;
-       margin-left: 10px;
-       margin-right: 10px;
+            height: 150vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            margin-left: 5vw;
+            flex-direction: row;
+            margin-top: 5vh;
+        }
+         .main_contain_dev ul > li {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
        /* You can also add some margins here to make it look prettier */
-    }
+        }
  }
