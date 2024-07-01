@@ -20,4 +20,14 @@ document.getElementById("icon_i_shashan").href = Instagram_shashan;
 document.getElementById("icon_i_shashan").target="_blank";
 document.getElementById("icon_g_shashan").href = github_shashan;
 document.getElementById("icon_g_shashan").target="_blank";
+var imageId_banti = "1K0QhMcN4HoeQxH8wnUTt5SQA8MAk4n4X";
+var LinkedIn_banti ="https://www.linkedin.com/in/banti-patel";
+var Instagram_banti ="https://www.instagram.com/majnuuu___28";
+var github_banti ="https://github.com/Bantipatel20";
+document.getElementById("icon_l_banti").href = LinkedIn_banti;
+document.getElementById("icon_l_banti").target="_blank";
+document.getElementById("icon_i_banti").href = Instagram_banti;
+document.getElementById("icon_i_banti").target="_blank";
+document.getElementById("icon_g_banti").href = github_banti;
+document.getElementById("icon_g_banti").target="_blank";
 
