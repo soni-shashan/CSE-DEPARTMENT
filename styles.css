@@ -8,8 +8,11 @@
 body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     background-color: white;
+    /* overflow: hidden; */
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 .navbar {
     background-color: #212529;
@@ -50,4 +53,8 @@ body {
 }
 .logo header h5{
     margin: 7px;
+}
+
+.main_contain{
+    height: 100vh;
 }
