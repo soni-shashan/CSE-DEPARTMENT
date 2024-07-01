@@ -36,9 +36,9 @@
      flex-wrap: wrap;
      flex: 1;
      flex-direction: row;
-     margin-left: 10vw;
      margin-top: 5vh;
      margin-bottom: 2vh;
+     justify-content: center;
     }
     @media (max-width: 600px) {
         .main_contain_dev {
@@ -47,9 +47,9 @@
             display: flex;
             flex-wrap: wrap;
             flex: 1;
-            margin-left: 5vw;
             flex-direction: row;
             margin-top: 5vh;
+            justify-content: center;
         }
          .main_contain_dev ul > li {
             display: inline-block;
