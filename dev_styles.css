@@ -1,0 +1,50 @@
+.profile-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    margin-top: 25px;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  ul > li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* You can also add some margins here to make it look prettier */
+ }
+ .main_contain_dev {
+     height: 65vh;
+     display: flex;
+     flex-wrap: wrap;
+     flex: 1;
+     flex-direction: row;
+     margin-left: 10vw;
+     margin-top: 5vh;
+ }
+ @media (max-width: 600px) {
+    .main_contain_dev {
+        height: 150vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-direction: row;
+    }
+ }
