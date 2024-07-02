@@ -33,8 +33,8 @@ var Instagram_dhaval ="https://www.instagram.com/dhaval_s_patel_";
 var github_dhaval ="https://github.com/Dsp2810";
 document.getElementById("icon_l_dhaval").href = LinkedIn_dhaval;
 document.getElementById("icon_l_dhaval").target="_blank";
-document.getElementById("icon_i_dhaval").href = Instagram_dLinkedIn_dhaval;
+document.getElementById("icon_i_dhaval").href = Instagram_dhaval;
 document.getElementById("icon_i_dhaval").target="_blank";
-document.getElementById("icon_g_dhaval").href = github_dLinkedIn_dhaval;
+document.getElementById("icon_g_dhaval").href = github_dhaval;
 document.getElementById("icon_g_dhaval").target="_blank";
 
