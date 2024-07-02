@@ -107,12 +107,36 @@ body::-webkit-scrollbar {
     margin: 7px;
 }
 
+/* .main_contain {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+} */
+
 .main_contain {
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    justify-content: center;
+   }
+   @media (max-width: 600px) {
+       .main_contain {
+           height: 100vh;
+           margin-bottom: 2vh;
+           display: flex;
+           flex-wrap: wrap;
+           flex: 1;
+           flex-direction: row;
+           margin-top: 5vh;
+         margin-bottom: 40px;
+           justify-content: center;
+       }
 }
 
 
