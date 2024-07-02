@@ -6,6 +6,10 @@
     background-color: #f8f9fa;
     margin-top: 25px;
   }
+.profile-card:hover {
+filter: drop-shadow(5px 5px 5px black);
+scale: 1.05;
+    }
   
   .profile-img {
     width: 150px;
@@ -28,6 +32,9 @@
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 40px;
+    width: 300px;
+    height: 300px;
     /* You can also add some margins here to make it look prettier */
  }
  .main_contain_dev {
@@ -49,11 +56,15 @@
             flex: 1;
             flex-direction: row;
             margin-top: 5vh;
+          margin-bottom: 40px;
             justify-content: center;
         }
          .main_contain_dev ul > li {
             display: inline-block;
+            width: 300px;
+            height: 300px;
             margin: 0px;
+            margin-bottom: 45px;
             /* You can also add some margins here to make it look prettier */
         }
  }
