@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="user"></h1>
+    <script>
+    if (sessionStorage.getItem('username')) {
+        if(sessionStorage.getItem('rights')==1){
+            document.getElementById('user').innerText = sessionStorage.getItem('username');
+        }
+    } else {
+        window.location.href = 'index.html'; 
+    }
+        window.addEventListener('beforeunload', function(event) {
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('rights');
+        });
+    </script>
+
+</body>
+</html>
