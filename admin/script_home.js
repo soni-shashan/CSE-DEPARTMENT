@@ -9,10 +9,10 @@ if (sessionStorage.getItem('username')) {
 } else {
     window.location.href = 'index.html'; 
 }
-    window.addEventListener('beforeunload', function(event) {
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('rights');
-    });
+    // window.addEventListener('beforeunload', function(event) {
+    //     sessionStorage.removeItem('username');
+    //     sessionStorage.removeItem('rights');
+    // });
 
 
     function capitalizeFirstLetter(string) {

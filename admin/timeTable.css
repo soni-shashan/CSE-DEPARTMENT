@@ -1,0 +1,14 @@
+.add_container{
+    background-color: #f0f0f0;
+    padding: 25px;
+    border-radius: 20px;
+    color: #333333;
+    margin: 10px;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    /* left: 50%;
+    top:50%;
+    transform: translate(120%,0); */
+    width: 80vw;
+}
