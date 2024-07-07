@@ -106,15 +106,15 @@ body::-webkit-scrollbar {
 .logo header h5 {
     margin: 7px;
 }
-
-/* .main_contain {
+ /*.main_contain {
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
-} */
+}*/ 
 
+<<<<<<< Updated upstream
 .main_contain {
     /* height: 100vh; */
     display: flex;
@@ -126,6 +126,8 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-content: center;
 }
+=======
+>>>>>>> Stashed changes
 
 @media (max-width: 600px) {
     .main_contain {
@@ -294,18 +296,15 @@ body::-webkit-scrollbar {
     transition: transform 0.3s ease-in-out;
     margin-bottom: 5%;
 }
-
 .circle-container:hover {
     transform: scale(1.1);
 }
-
 .circle-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
-
 .content-group {
     position: absolute;
     bottom: 0;
@@ -313,7 +312,6 @@ body::-webkit-scrollbar {
     text-align: center;
     padding-bottom: 5%;
 }
-
 .final-group {
     display: inline-block;
     justify-content: space-between;
@@ -331,3 +329,4 @@ body::-webkit-scrollbar {
     padding: 1vh 4vh;
     border-radius: 5px;
 }
+,
