@@ -125,48 +125,162 @@ body::-webkit-scrollbar {
     margin-bottom: 2vh;
     justify-content: center;
     align-content: center;
-   }
+}
 
-   @media (max-width: 600px) {
-       .main_contain {
-           margin-bottom: 2vh;
-           display: flex;
-           flex-wrap: wrap;
-           flex: 1;
-           flex-direction: row;
-           margin-top: 5vh;
-         margin-bottom: 40px;
-           justify-content: center;
-           align-content: center;
-       }
-    }
-
-    .main_contain_club {
-        /* height: 100vh; */
+@media (max-width: 600px) {
+    .main_contain {
+        margin-bottom: 2vh;
         display: flex;
         flex-wrap: wrap;
         flex: 1;
         flex-direction: row;
         margin-top: 5vh;
-        margin-bottom: 2vh;
-        justify-content: left;
-        align-content:start;
-       }
-    
-       @media (max-width: 600px) {
-           .main_contain_club {
-               margin-bottom: 2vh;
-               display: flex;
-               flex-wrap: wrap;
-               flex: 1;
-               flex-direction: row;
-               margin-top: 5vh;
-             margin-bottom: 40px;
-               justify-content: left;
-               align-content: start;
-           }
-        }
+        margin-bottom: 40px;
+        justify-content: center;
+        align-content: center;
+    }
+}
 
+._main_contain_club {
+    /* height: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    justify-content: left;
+    align-content: center;
+    border: 2px;
+    border-color: black;
+    border-radius: 20px;
+    border-style: dashed;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    ._main_contain_club {
+        margin-bottom: 2vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-direction: row;
+        margin-top: 5vh;
+        margin-bottom: 40px;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        justify-content: left;
+        align-content: center;
+        border: 2px;
+        border-color: black;
+        border-radius: 20px;
+        border-style: dashed;
+        padding: 15px;
+        .join-button {
+            background-color: #4CAF50;
+            /* Green background */
+            border: none;
+            /* Remove borders */
+            color: rgb(255, 255, 255);
+            /* White text */
+            padding: 15px 32px;
+            /* Some padding */
+            text-align: center;
+            /* Centered text */
+            text-decoration: none;
+            /* Remove underline */
+            display: inline-block;
+            /* Get it to fit within container */
+            font-size: 16px;
+            /* Increase font size */
+            margin: 4px 2px;
+            /* Some margin */
+            cursor: pointer;
+            /* Pointer/hand icon */
+            border-radius: 12px;
+            /* Rounded corners */
+            transition-duration: 0.4s;
+            /* Animation duration */
+        }
+    
+        .join-button:hover {
+            background-color: rgb(16, 179, 143);
+            /* White background on hover */
+            color: rgb(18, 215, 117);
+            /* Black text on hover */
+            border: 2px solid #1fec26;
+            /* Green border on hover */
+        }
+    
+    }
+
+    /* styles.css */
+    .join-button {
+        background-color: #4CAF50;
+        /* Green background */
+        border: none;
+        /* Remove borders */
+        color: rgb(255, 255, 255);
+        /* White text */
+        padding: 15px 32px;
+        /* Some padding */
+        text-align: center;
+        /* Centered text */
+        text-decoration: none;
+        /* Remove underline */
+        display: inline-block;
+        /* Get it to fit within container */
+        font-size: 16px;
+        /* Increase font size */
+        margin: 4px 2px;
+        /* Some margin */
+        cursor: pointer;
+        /* Pointer/hand icon */
+        border-radius: 12px;
+        /* Rounded corners */
+        transition-duration: 0.4s;
+        /* Animation duration */
+    }
+
+    .join-button:hover {
+        background-color: rgb(16, 179, 143);
+        /* White background on hover */
+        color: rgb(18, 215, 117);
+        /* Black text on hover */
+        border: 2px solid #1fec26;
+        /* Green border on hover */
+    }
+
+}
+
+.club_container {
+    display: inline-flex;
+    flex-wrap: inherit;
+    flex: 3;
+    flex-direction: row;
+}
+
+.club_container img {
+    width: 40%;
+    height: 40%;
+}
+
+@media (max-width:600px) {
+    .club_container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex: 3;
+        flex-direction: row;
+    }
+
+    .club_container img {
+        width: 80%;
+        height: 80%;
+    }
+
+}
 
 .circle-container {
     position: relative;
