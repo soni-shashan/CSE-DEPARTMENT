@@ -13,8 +13,12 @@ if (sessionStorage.getItem('username')) {
     //     sessionStorage.removeItem('username');
     //     sessionStorage.removeItem('rights');
     // });
-
-
+    
+    
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
+    document.getElementById("logout").addEventListener('click',()=>{
+        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('rights');
+});
