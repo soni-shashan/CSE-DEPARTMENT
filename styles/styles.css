@@ -116,7 +116,7 @@ body::-webkit-scrollbar {
 } */
 
 .main_contain {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-wrap: wrap;
     flex: 1;
