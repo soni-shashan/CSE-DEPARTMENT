@@ -169,15 +169,36 @@ function createAndAppendElementWithID(parent, elementType, className,textContent
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the event listener to the button
     document.getElementById('uploadButton').addEventListener('click', uploadImage);
-    // document.getElementById('uploadButton').addEventListener('click', createClub);
     document.getElementById('addContent').addEventListener('click', ()=>{
-    const textAreaDescriptionAreaContainer=createAndAppendElement(text_description_list,'div','text_description_area');
-    const textAreaDescriptionAreaMain=createAndAppendElement(textAreaDescriptionAreaContainer,'div','text_description_area_main');
-    createAndAppendElementInput(textAreaDescriptionAreaMain,'input','form-control mb-3','title','','text','text_title_'+content_count);
-    createAndAppendElementTextArea(textAreaDescriptionAreaMain,'textarea','form-control mb-3','Enter description here...','','text_description_'+content_count,4);
-    content_count++;
-    if(content_count==1){
-        createAndAppendElementWithIDOnClick(document.getElementById("addButton"),'button','btn btn-primary mb-3','CREATE CLUB','create_club');
+        const textAreaDescriptionAreaContainer=createAndAppendElement(document.getElementById("text_description_list"),'div','text_description_area');
+        const textAreaDescriptionAreaMain=createAndAppendElement(textAreaDescriptionAreaContainer,'div','text_description_area_main');
+        createAndAppendElementInput(textAreaDescriptionAreaMain,'input','form-control mb-3','title','','text','text_title_'+content_count);
+        createAndAppendElementTextArea(textAreaDescriptionAreaMain,'textarea','form-control mb-3','Enter description here...','','text_description_'+content_count,4);
+        content_count++;
+        if(content_count==1){
+            createAndAppendElementWithID(document.getElementById("addButton"),'button','btn btn-primary mb-3','CREATE CLUB','create_club');
+            document.getElementById('create_club').addEventListener('click', createClub);
     }
 });
 });
+
+
+{/* <div class="main_club">
+        <h3><u>
+            AI & ML CLUB
+          </u></h3>
+        <br>
+        <div class="club_container">
+          <img src="./AIML.jpg " width="40%" height="40%">
+          <div class"content>
+            <h4>Vision</h4>
+            <p>Our vision is to foster a collaborative environment where students can explore the vast potentials of
+              Artificial Intelligence and Machine Learning, encouraging innovation and research.</p>
+            <h4>Target Members</h4>
+            <p>We aim to attract students who are passionate about AI and ML, eager to learn and contribute to projects,
+              and
+              willing to engage in competitions and research initiatives.</p>
+            </div>
+          </div>
+          <a hrexf="https://docs.google.com/forms/d/e/1FAIpQLSdKYjatiyODe1SCsyBbfGE6IO0KrdpqYJOu657Vpe46brgTxA/viewform" target="_blank" class="btn btn-primary mt-md-4">JOIN LINK</a>
+        </div> */}

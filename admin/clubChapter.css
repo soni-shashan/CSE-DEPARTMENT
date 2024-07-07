@@ -17,4 +17,5 @@
 .text_description_area_main{
     position: relative;
     width: 85%;
+    height: 100%;
 }
