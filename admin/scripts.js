@@ -21,7 +21,7 @@
   const app=initializeApp(firebaseConfig);
   const db = getDatabase(app);
   if (sessionStorage.getItem('username')) {
-    window.location.href = 'home.html'; 
+    window.location.href = 'welcome.html'; 
   }
 document.getElementById("login").addEventListener('click',function(e){
     var username = document.getElementById("username").value;
