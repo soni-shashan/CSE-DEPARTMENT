@@ -24,8 +24,10 @@
     window.location.href = 'home.html'; 
   }
 document.getElementById("login").addEventListener('click',function(e){
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    username=username.replace(".","-");
+    console.log(username);
     const userRef = ref(db, 'user/' + username);
     if(username!=""&&password!=""){
         get(child(ref(db), 'user/' + username)).then((snapshot) => {
