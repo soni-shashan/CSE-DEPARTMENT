@@ -21,12 +21,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 const storage = getStorage(app);
-
+var content_count=0;
 // Authenticate anonymously
 signInAnonymously(auth)
   .then(() => {
     console.log("Signed in anonymously");
-    loadTimeTables();
+    loadClubChapter();
   })
   .catch((error) => {
     console.error("Error signing in anonymously: ", error);
@@ -34,9 +34,9 @@ signInAnonymously(auth)
   function sanitizeFileName(fileName) {
     return fileName.replace(/[.#$[\]]/g, '_');
 }
-  async function deleteImage(key, url) {
+  async function deleteClub(key, url) {
     // Delete from Storage
-    const storageRefToDelete = storageRef(storage, 'timeTable/' + url);
+    const storageRefToDelete = storageRef(storage, 'clubChapter/' + url);
     try {
         await storage.deleteObject(storageRefToDelete);
         console.log("Image deleted from Firebase Storage");
@@ -55,7 +55,7 @@ signInAnonymously(auth)
 
     // Refresh the list of time tables
     location.reload();
-    loadTimeTables();
+    loadClubChapter();
 }
 // Function to create and append elements dynamically
 function createAndAppendElement(parent, elementType, className, textContent = '') {
@@ -66,8 +66,8 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
   return element;
 }
 
-async function loadTimeTables() {
-  const dbRef = ref(db, 'timeTable/');
+async function loadClubChapter() {
+  const dbRef = ref(db, 'clubChapter/');
   try {
       const snapshot = await get(dbRef);
       if (snapshot.exists()) {
@@ -88,7 +88,7 @@ async function loadTimeTables() {
               const cardBody = createAndAppendElement(listItem, 'div', 'card-body text-center');
               const deleteBtn = createAndAppendElement(cardBody, 'a', 'btn btn-danger', 'Delete');
               deleteBtn.onclick = function() {
-                  deleteImage(key, url);
+                  deleteClub(key, url);
               };
           });
       } else {
@@ -109,7 +109,7 @@ async function uploadImage() {
     }
 
     const sanitizedFileName = sanitizeFileName(file.name);
-    const storageReference = storageRef(storage, 'timeTable/' + sanitizedFileName);
+    const storageReference = storageRef(storage, 'clubChapter/' + sanitizedFileName);
 
     try {
         console.log("Uploading image to Firebase Storage...");
@@ -121,14 +121,14 @@ async function uploadImage() {
         console.log("Download URL obtained: ", downloadURL);
 
         // Save the image URL to the database
-        const imageRef = ref(db, 'timeTable/' + document.getElementById("title_text").value);
+        const imageRef = ref(db, 'clubChapter/' + document.getElementById("title_text").value);
         console.log("Saving URL to the database...");
         await set(imageRef, {
             url: downloadURL
         });
         console.log("URL saved to the database");
         
-        loadTimeTables();
+        // loadClubChapter();
         // Display the uploaded image
         alert("Image uploaded successfully!");
     } catch (error) {
@@ -136,9 +136,48 @@ async function uploadImage() {
         alert("Error uploading image. Please try again.");
     }
 }
+function createAndAppendElementInput(parent, elementType, className,placeholder='', textContent = '',type='',id='') {
+    const element = document.createElement(elementType);
+    element.className = className;
+    element.textContent = textContent;
+    element.placeholder = placeholder;
+    element.type = type;
+    element.id = id;
+    parent.appendChild(element);
+    return element;
+  }
+function createAndAppendElementTextArea(parent, elementType, className,placeholder='', textContent = '',id='',row='') {
+    const element = document.createElement(elementType);
+    element.className = className;
+    element.textContent = textContent;
+    element.placeholder = placeholder;
+    element.id = id;
+    element.row = row;
+    parent.appendChild(element);
+    return element;
+  }
+function createAndAppendElementWithID(parent, elementType, className,textContent='',id='') {
+    const element = document.createElement(elementType);
+    element.className = className;
+    element.textContent = textContent;
+    element.id = id;
+    parent.appendChild(element);
+    return element;
+  }
 
 // Ensure DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the event listener to the button
     document.getElementById('uploadButton').addEventListener('click', uploadImage);
+    // document.getElementById('uploadButton').addEventListener('click', createClub);
+    document.getElementById('addContent').addEventListener('click', ()=>{
+    const textAreaDescriptionAreaContainer=createAndAppendElement(text_description_list,'div','text_description_area');
+    const textAreaDescriptionAreaMain=createAndAppendElement(textAreaDescriptionAreaContainer,'div','text_description_area_main');
+    createAndAppendElementInput(textAreaDescriptionAreaMain,'input','form-control mb-3','title','','text','text_title_'+content_count);
+    createAndAppendElementTextArea(textAreaDescriptionAreaMain,'textarea','form-control mb-3','Enter description here...','','text_description_'+content_count,4);
+    content_count++;
+    if(content_count==1){
+        createAndAppendElementWithIDOnClick(document.getElementById("addButton"),'button','btn btn-primary mb-3','CREATE CLUB','create_club');
+    }
+});
 });

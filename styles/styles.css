@@ -114,8 +114,7 @@ body::-webkit-scrollbar {
     flex-direction: row;
 }*/ 
 
-<<<<<<< Updated upstream
-.main_contain {
+._main_contain {
     /* height: 100vh; */
     display: flex;
     flex-wrap: wrap;
@@ -126,11 +125,10 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-content: center;
 }
-=======
->>>>>>> Stashed changes
+
 
 @media (max-width: 600px) {
-    .main_contain {
+    ._main_contain {
         margin-bottom: 2vh;
         display: flex;
         flex-wrap: wrap;
@@ -329,4 +327,3 @@ body::-webkit-scrollbar {
     padding: 1vh 4vh;
     border-radius: 5px;
 }
-,
