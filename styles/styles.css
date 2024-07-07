@@ -173,13 +173,17 @@ body::-webkit-scrollbar {
     flex: 3;
     flex-direction: row;
 }
+
+.club_container img {
+    width: 40%;
+    height: 40%;
+}
 .main_club {
     display:flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     border: 2px;
-    box-shadow: 2px 2px 2px 2px black;
     border-color: black;
     border-radius: 20px;
     border-style: dashed;

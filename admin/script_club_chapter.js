@@ -22,6 +22,7 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 const storage = getStorage(app);
 var content_count=0;
+var imageLink;
 // Authenticate anonymously
 signInAnonymously(auth)
   .then(() => {
@@ -67,37 +68,56 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
 }
 
 async function loadClubChapter() {
-  const dbRef = ref(db, 'clubChapter/');
-  try {
+    const dbRef = ref(db, 'clubChapter/');
+    try {
       const snapshot = await get(dbRef);
       if (snapshot.exists()) {
-          const timeTables = snapshot.val();
-          const timeTableList = document.getElementById('timeTableList');
-          timeTableList.innerHTML = ''; // Clear the existing list
-
-          Object.keys(timeTables).forEach((key) => {
-              const url = timeTables[key].url;
-
-              // Create elements dynamically
-              const listItem = createAndAppendElement(timeTableList, 'div', 'card');
-              const cardHeader = createAndAppendElement(listItem, 'div', 'card-header text-center');
-              createAndAppendElement(cardHeader, 'h2', '', key);
-              const img = createAndAppendElement(listItem, 'img', '', '');
-              img.src = url;
-              img.style.width = '100%';
-              const cardBody = createAndAppendElement(listItem, 'div', 'card-body text-center');
-              const deleteBtn = createAndAppendElement(cardBody, 'a', 'btn btn-danger', 'Delete');
-              deleteBtn.onclick = function() {
-                  deleteClub(key, url);
-              };
+        const clubChapters = snapshot.val();
+        const clubChapterList = document.getElementById('clubChapterList');
+        clubChapterList.innerHTML = ''; // Clear the existing list
+  
+        Object.keys(clubChapters).forEach((key) => {
+          const chapter = clubChapters[key];
+          const url = chapter.url;
+          const clubLink = chapter.club_link;
+            
+          // Create main club div
+          const mainClubDiv = createAndAppendElement(clubChapterList, 'div', 'main_club mb-5');
+          createAndAppendElement(mainClubDiv, 'h3', '', key).innerHTML = `<u>${key}</u>`;
+  
+          // Create club container div
+          const clubContainerDiv = createAndAppendElement(mainClubDiv, 'div', 'club_container');
+  
+          // Add image if URL exists
+          if (url) {
+            const img = createAndAppendElement(clubContainerDiv, 'img', '', '');
+            img.src = url;
+          }
+  
+          // Add content div
+          const contentDiv = createAndAppendElement(clubContainerDiv, 'div', 'content');
+  
+          // Populate content
+          chapter.content.forEach(item => {
+            createAndAppendElement(contentDiv, 'h4', '', item.title);
+            createAndAppendElement(contentDiv, 'p', '', item.description);
           });
+  
+          // Add join link button if clubLink is not empty
+          if (clubLink) {
+            const joinLink = createAndAppendElement(mainClubDiv, 'a', 'btn btn-primary mt-3', 'JOIN LINK');
+            joinLink.href = clubLink;
+            joinLink.target = "_blank";
+          }
+        });
+
       } else {
-          console.log("No data available");
+        console.log("No data available");
       }
-  } catch (error) {
+    } catch (error) {
       console.error("Error fetching data: ", error);
+    }
   }
-}
 
 async function uploadImage() {
     const fileInput = document.getElementById('imageInput');
@@ -120,12 +140,7 @@ async function uploadImage() {
         const downloadURL = await getDownloadURL(storageReference);
         console.log("Download URL obtained: ", downloadURL);
 
-        // Save the image URL to the database
-        const imageRef = ref(db, 'clubChapter/' + document.getElementById("title_text").value);
-        console.log("Saving URL to the database...");
-        await set(imageRef, {
-            url: downloadURL
-        });
+       imageLink=downloadURL;
         console.log("URL saved to the database");
         
         // loadClubChapter();
@@ -165,12 +180,41 @@ function createAndAppendElementWithID(parent, elementType, className,textContent
     return element;
   }
 
+async function createClub(){
+    let club_link=document.getElementById("club_link").value;
+    let contentArray = [];
+    for (let i = 0; i < content_count; i++) {
+        let title = document.getElementById("text_title_" + i).value;
+        let description = document.getElementById("text_description_" + i).value;
+        contentArray.push({ title: title, description: description });
+    }
+    try{
+        const imageRef = ref(db, 'clubChapter/' + document.getElementById("title_text").value);
+        console.log("Saving URL to the database...");
+        await set(imageRef, {
+            content:contentArray,
+            content_count:content_count,
+            url:imageLink,
+            club_link:club_link
+        });
+        console.log("URL saved to the database");
+    }catch(error){
+    
+    }
+    document.getElementById("title").value="";
+    document.getElementById("club_link").value="";
+    document.getElementById('imageInput').value=null;
+    for(let i=0;i<content_count;i++){
+        document.getElementById("text_description_area_"+i).remove();
+    }
+}
 // Ensure DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the event listener to the button
     document.getElementById('uploadButton').addEventListener('click', uploadImage);
     document.getElementById('addContent').addEventListener('click', ()=>{
-        const textAreaDescriptionAreaContainer=createAndAppendElement(document.getElementById("text_description_list"),'div','text_description_area');
+        const textAreaDescriptionArea=createAndAppendElementWithID(document.getElementById("text_description_list"),'div','text_description_area_'+content_count,'','text_description_area_'+content_count);
+        const textAreaDescriptionAreaContainer=createAndAppendElement(textAreaDescriptionArea,'div','text_description_area');
         const textAreaDescriptionAreaMain=createAndAppendElement(textAreaDescriptionAreaContainer,'div','text_description_area_main');
         createAndAppendElementInput(textAreaDescriptionAreaMain,'input','form-control mb-3','title','','text','text_title_'+content_count);
         createAndAppendElementTextArea(textAreaDescriptionAreaMain,'textarea','form-control mb-3','Enter description here...','','text_description_'+content_count,4);
@@ -180,25 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('create_club').addEventListener('click', createClub);
     }
 });
+
 });
 
 
-{/* <div class="main_club">
-        <h3><u>
-            AI & ML CLUB
-          </u></h3>
-        <br>
-        <div class="club_container">
-          <img src="./AIML.jpg " width="40%" height="40%">
-          <div class"content>
-            <h4>Vision</h4>
-            <p>Our vision is to foster a collaborative environment where students can explore the vast potentials of
-              Artificial Intelligence and Machine Learning, encouraging innovation and research.</p>
-            <h4>Target Members</h4>
-            <p>We aim to attract students who are passionate about AI and ML, eager to learn and contribute to projects,
-              and
-              willing to engage in competitions and research initiatives.</p>
-            </div>
-          </div>
-          <a hrexf="https://docs.google.com/forms/d/e/1FAIpQLSdKYjatiyODe1SCsyBbfGE6IO0KrdpqYJOu657Vpe46brgTxA/viewform" target="_blank" class="btn btn-primary mt-md-4">JOIN LINK</a>
-        </div> */}
