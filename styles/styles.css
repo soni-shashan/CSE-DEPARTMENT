@@ -124,6 +124,7 @@ body::-webkit-scrollbar {
     margin-top: 5vh;
     margin-bottom: 2vh;
     justify-content: center;
+    align-content: center;
    }
    @media (max-width: 600px) {
        .main_contain {
