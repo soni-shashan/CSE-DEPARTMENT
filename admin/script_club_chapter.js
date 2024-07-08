@@ -109,6 +109,10 @@ async function loadClubChapter() {
             joinLink.href = clubLink;
             joinLink.target = "_blank";
           }
+          const deleteBtn = createAndAppendElement(mainClubDiv, 'a', 'btn btn-danger mt-3', 'Delete');
+          deleteBtn.onclick = function() {
+              deleteClub(key, url);
+          };
         });
 
       } else {
