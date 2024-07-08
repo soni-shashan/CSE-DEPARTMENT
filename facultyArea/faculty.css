@@ -1,0 +1,107 @@
+.profile-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  border-width: 0.2px;
+  border-style: solid;
+  border-color: #0037ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  margin-top: 25px;
+  width: 300px;
+  height: 350px;
+}
+
+.profile-card:hover {
+  filter: drop-shadow(5px 5px 5px black);
+  scale: 1.05;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-post {
+  font-size: 18px;
+  font-style: normal;
+  margin-bottom: 10px;
+  color: #240d51;
+}
+
+.-main-content_faculty ul>li {
+  display: inline-block;
+  /* margin-left: 20px; */
+  /* margin-right: 20px; */
+  margin-bottom: 40px;
+  width: 300px;
+  height: 300px;
+  /* You can also add some margins here to make it look prettier */
+}
+
+.-main-content_faculty ul {
+  margin: 0 auto;
+
+}
+
+
+.-main-content_faculty {
+  /* height: 65vh; */
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    border-width: 0.2px;
+    border-style: solid;
+    border-color: #0037ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    margin-top: 25px;
+    width: 250px;
+    height: 350px;
+  }
+  .-main-content_faculty {
+    /* height: 150vh; */
+    margin-bottom: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 40px;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  .-main-content_faculty ul>li {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 0px;
+    margin-bottom: 100px;
+  }
+
+}
