@@ -24,6 +24,8 @@
     window.location.href = 'welcome.html'; 
   }
 document.getElementById("login").addEventListener('click',function(e){
+    document.getElementById("loading").style.display = "flex";
+    document.querySelector("._main").classList.add("blur");
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     username=username.replace(".","-");
@@ -51,9 +53,14 @@ document.getElementById("login").addEventListener('click',function(e){
             }
         }).catch((error) => {
             console.error("Error reading data:", error);
+        }).finally(() => {
+            document.getElementById("loading").style.display = "none";
+            document.querySelector("._main").classList.remove("blur");
         });
     }else{
         alert("Enter Necessary Details!!");
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main").classList.remove("blur");
     }
 });
 var form = document.getElementById('loginForm'); 
