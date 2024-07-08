@@ -1,0 +1,44 @@
+.wrapper{
+    position: relative;
+    
+    margin-top: 30px;
+    h1{
+        text-align: center;
+        text-shadow: 0px 0px 10px;
+    } 
+    p{
+        font-size: 1.5rem;
+        text-shadow: 0px 0px 0.5px;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+.card{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 200vh;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    
+}
+.card h1 {
+    font-size: 54px;
+    margin: 0 0 10px;
+    text-decoration: underline;
+
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
