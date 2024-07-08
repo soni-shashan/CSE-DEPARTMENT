@@ -40,6 +40,7 @@ document.getElementById("login").addEventListener('click',function(e){
                     event.preventDefault();
                     sessionStorage.setItem('username', userData.username);
                     sessionStorage.setItem('rights', userData.rights);
+                    sessionStorage.setItem('password', userData.password);
                     window.location.href = 'welcome.html'; 
                 }
             } else {
