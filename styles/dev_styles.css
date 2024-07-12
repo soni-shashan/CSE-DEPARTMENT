@@ -32,6 +32,7 @@ scale: 1.05;
   .profile-name_g {
     font-size: 24px;
     font-style: normal;
+    padding-left: 25px;
     /* margin-bottom: 10px; */
     color: #823c3c;
   }
