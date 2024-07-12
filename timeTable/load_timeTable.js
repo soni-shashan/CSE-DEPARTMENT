@@ -33,6 +33,8 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
   }
   
   async function loadTimeTables() {
+    document.getElementById("loading").style.display = "flex";
+    document.querySelector("._main_contain").classList.add("blur");
     const dbRef = ref(db, 'timeTable/');
     try {
         const snapshot = await get(dbRef);
@@ -58,10 +60,16 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
                 const cardBody = createAndAppendElement(listItem, 'div', 'card-body text-center');
                 
             });
+            document.getElementById("loading").style.display = "none";
+            document.querySelector("._main_contain").classList.remove("blur");
         } else {
+            document.getElementById("loading").style.display = "none";
+            document.querySelector("._main_contain").classList.remove("blur");
             console.log("No data available");
         }
     } catch (error) {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main_contain").classList.remove("blur");
         console.error("Error fetching data: ", error);
     }
   }

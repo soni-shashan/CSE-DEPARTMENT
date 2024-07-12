@@ -31,6 +31,8 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
   }
 
 async function loadClubChapter() {
+  document.getElementById("loading").style.display = "flex";
+    document.querySelector("._main_contain_club").classList.add("blur");
     const dbRef = ref(db, 'clubChapter/');
     try {
       const snapshot = await get(dbRef);
@@ -75,10 +77,16 @@ async function loadClubChapter() {
             joinLink.target = "_blank";
           }
         });
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main_contain_club").classList.remove("blur");
       } else {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main_contain_club").classList.remove("blur");
         console.log("No data available");
       }
     } catch (error) {
+      document.getElementById("loading").style.display = "none";
+      document.querySelector("._main_contain_club").classList.remove("blur");
       console.error("Error fetching data: ", error);
     }
   }
