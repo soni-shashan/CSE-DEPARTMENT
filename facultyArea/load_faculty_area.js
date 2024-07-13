@@ -15,7 +15,7 @@ const firebaseConfig = {
   appId: "1:946911360258:web:9a35e888591e5cbbf2be1b",
   measurementId: "G-Q0RX2TWZXW"
 };
-
+window.onload=loadFacultyArea();
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -25,6 +25,8 @@ const storage = getStorage(app);
 window.onload=loadFacultyArea();
 
 async function loadFacultyArea() {
+    document.getElementById("loading").style.display = "flex";
+    document.querySelector(".-main-content_faculty").classList.add("blur");
     const dbRef = ref(db, 'FacultyArea/');
     try {
         const snapshot = await get(dbRef);
@@ -76,11 +78,16 @@ async function loadFacultyArea() {
   
                 facultyList.appendChild(listItem);
             });
-  
+            document.getElementById("loading").style.display = "none";
+            document.querySelector(".-main-content_faculty").classList.remove("blur");
         } else {
+            document.getElementById("loading").style.display = "none";
+            document.querySelector(".-main-content_faculty").classList.remove("blur");
             console.log("No data available");
         }
     } catch (error) {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector(".-main-content_faculty").classList.remove("blur");
         console.error("Error fetching data: ", error);
     }
   }

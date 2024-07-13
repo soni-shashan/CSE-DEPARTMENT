@@ -67,44 +67,8 @@
   margin-bottom: 10vh;
   justify-content: center;
   align-content: center;
-}
+}  
 
-@media (max-width: 600px) {
-  .profile-card {
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    border-width: 0.2px;
-    border-style: solid;
-    border-color: #0037ff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
-    margin-top: 25px;
-    width: 250px;
-    height: 350px;
-  }
-  .-main-content_faculty {
-    /* height: 150vh; */
-    margin-bottom: 2vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    margin-top: 5vh;
-    margin-bottom: 40px;
-    justify-content: center;
-    margin: 0px;
-  }
-
-  .-main-content_faculty ul>li {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
-    margin: 0px;
-    margin-bottom: 100px;
-  }
-
-}
 
 .list_con ul {
   list-style-type: none;
@@ -121,7 +85,7 @@
   float: left;
 }
 
-list_cin li a {
+.list_cin li a {
   display: block;
   color: white;
   text-align: center;
@@ -129,3 +93,64 @@ list_cin li a {
   text-decoration: none;
 }
 
+@media (max-width: 600px) {
+  .profile-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    border-width: 0.2px;
+    border-style: solid;
+    border-color: #0037ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    margin-top: 25px;
+    width: 250px;
+    height: 400px;
+  }  
+  .-main-content_faculty {
+    /* height: 150vh; */
+    margin-bottom: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-content: center;
+    margin: 0px;
+  }  
+  
+  
+  .list_con ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #ffffff; */
+    display: table-row;
+    row-gap: 2%;
+    
+  }
+  
+  .list_con li {
+    float: left;
+  }
+  
+  .list_cin li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .-main-content_faculty ul>li {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 0px;
+    margin-bottom: 100px;
+  }  
+
+}  

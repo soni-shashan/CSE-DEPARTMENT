@@ -15,7 +15,7 @@ const firebaseConfig = {
   appId: "1:946911360258:web:9a35e888591e5cbbf2be1b",
   measurementId: "G-Q0RX2TWZXW"
 };
-
+window.onload=loadClubChapter();
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -68,6 +68,8 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
 }
 
 async function loadClubChapter() {
+  document.getElementById("loading").style.display = "flex";
+  document.querySelector("._main_contain").classList.add("blur");
     const dbRef = ref(db, 'clubChapter/');
     try {
       const snapshot = await get(dbRef);
@@ -114,11 +116,16 @@ async function loadClubChapter() {
               deleteClub(key, url);
           };
         });
-
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main_contain").classList.remove("blur");
       } else {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector("._main_contain").classList.remove("blur");
         console.log("No data available");
       }
     } catch (error) {
+      document.getElementById("loading").style.display = "none";
+      document.querySelector("._main_contain").classList.remove("blur");
       console.error("Error fetching data: ", error);
     }
   }
