@@ -68,65 +68,78 @@ function createAndAppendElement(parent, elementType, className, textContent = ''
 }
 
 async function loadFacultyArea() {
-  const dbRef = ref(db, 'FacultyArea/');
-  try {
-      const snapshot = await get(dbRef);
-      if (snapshot.exists()) {
-          const facultyArea = snapshot.val();
-          const facultyList = document.getElementById('facultyList'); // Assuming there's a ul element with id 'faculty-list'
+    const dbRef = ref(db, 'FacultyArea/');
+    try {
+        const snapshot = await get(dbRef);
+        if (snapshot.exists()) {
+            const facultyArea = snapshot.val();
+            const facultyList = document.getElementById('facultyList');
 
-          Object.keys(facultyArea).forEach(facultyName => {
-              const facultyData = facultyArea[facultyName];
-              const listItem = document.createElement('li');
+            // Check if facultyList already exists
+            if (!facultyList) {
+                // Create ul element if it doesn't exist
+                const ul = document.createElement('ul');
+                ul.id = 'facultyList';
+                ul.className = 'faculty-list'; // Optional: Add a class for styling
+                document.body.appendChild(ul); // Append to body or any parent element you want
+            }
 
-              const containerDiv = document.createElement('div');
-              containerDiv.className = 'container';
+            // Get the ul element again
+            const updatedList = document.getElementById('facultyList');
 
-              const rowDiv = document.createElement('div');
-              rowDiv.className = 'row justify-content-center';
+            // Iterate through facultyArea and populate the list
+            Object.keys(facultyArea).forEach(facultyName => {
+                const facultyData = facultyArea[facultyName];
+                const listItem = document.createElement('li');
 
-              const colDiv = document.createElement('div');
-              colDiv.className = 'col-md-20';
+                const containerDiv = document.createElement('div');
+                containerDiv.className = 'container';
 
-              const profileCardDiv = document.createElement('div');
-              profileCardDiv.className = 'profile-card';
-              
-              if (facultyData.profileLink) {
-                  profileCardDiv.onclick = () => window.open(facultyData.profileLink, '_blank');
-              }
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'row justify-content-center';
 
-              const profileImg = document.createElement('img');
-              profileImg.src = facultyData.imageUrl;
-              profileImg.alt = 'Profile Picture';
-              profileImg.className = 'profile-img';
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col-md-20';
 
-              const profileNameDiv = document.createElement('div');
-              profileNameDiv.className = 'profile-name';
-              profileNameDiv.textContent = facultyName;
+                const profileCardDiv = document.createElement('div');
+                profileCardDiv.className = 'profile-card';
 
-              const profilePostDiv = document.createElement('div');
-              profilePostDiv.className = 'profile-post';
-              profilePostDiv.textContent = facultyData.position;
+                if (facultyData.profileLink) {
+                    profileCardDiv.onclick = () => window.open(facultyData.profileLink, '_blank');
+                }
 
-              profileCardDiv.appendChild(profileImg);
-              profileCardDiv.appendChild(profileNameDiv);
-              profileCardDiv.appendChild(profilePostDiv);
+                const profileImg = document.createElement('img');
+                profileImg.src = facultyData.imageUrl;
+                profileImg.alt = 'Profile Picture';
+                profileImg.className = 'profile-img';
 
-              colDiv.appendChild(profileCardDiv);
-              rowDiv.appendChild(colDiv);
-              containerDiv.appendChild(rowDiv);
-              listItem.appendChild(containerDiv);
+                const profileNameDiv = document.createElement('div');
+                profileNameDiv.className = 'profile-name';
+                profileNameDiv.textContent = facultyName;
 
-              facultyList.appendChild(listItem);
-          });
+                const profilePostDiv = document.createElement('div');
+                profilePostDiv.className = 'profile-post';
+                profilePostDiv.textContent = facultyData.position;
 
-      } else {
-          console.log("No data available");
-      }
-  } catch (error) {
-      console.error("Error fetching data: ", error);
-  }
+                profileCardDiv.appendChild(profileImg);
+                profileCardDiv.appendChild(profileNameDiv);
+                profileCardDiv.appendChild(profilePostDiv);
+
+                colDiv.appendChild(profileCardDiv);
+                rowDiv.appendChild(colDiv);
+                containerDiv.appendChild(rowDiv);
+                listItem.appendChild(containerDiv);
+
+                updatedList.appendChild(listItem); // Append to the updated ul element
+            });
+        } else {
+            console.log("No data available");
+        }
+    } catch (error) {
+        console.error("Error fetching data: ", error);
+    }
 }
+
 
 
 async function uploadImage() {

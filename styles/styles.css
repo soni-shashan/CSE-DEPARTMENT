@@ -251,10 +251,6 @@ body::-webkit-scrollbar {
     padding: 1vh 4vh;
     border-radius: 5px;
 }
-
-ul {
-    list-style-type: none;
-  }
   
 
   .loading {

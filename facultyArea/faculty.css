@@ -9,7 +9,7 @@
   background-color: #f8f9fa;
   margin-top: 25px;
   width: 300px;
-  height: 350px;
+  height: 400px;
 }
 
 .profile-card:hover {
@@ -105,3 +105,27 @@
   }
 
 }
+
+.list_con ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #ffffff; */
+  display: table-row;
+  row-gap: 2%;
+  
+}
+
+.list_con li {
+  float: left;
+}
+
+list_cin li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
