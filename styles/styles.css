@@ -21,6 +21,7 @@ body::-webkit-scrollbar {
     background-color: #212529;
 }
 
+
 .navbar-brand {
     font-size: 1.5rem;
     color: #ffffff;
@@ -37,113 +38,113 @@ body::-webkit-scrollbar {
 /* .social-icons {
     font-size: 1.4rem;
     filter: drop-shadow(5px 5px 5px black);
-}
-
-.social-icons a {
-    color: #ffffff;
+    }
+    
+    .social-icons a {
+        color: #ffffff;
     margin-left: 15px;
-}
-
-.social-icons a:hover {
-    color: #9bc4ed;
-    font-size: 1.6rem;
-} 
-
-.social-icons {
-    margin-top: 1vh;
+    }
+    
+    .social-icons a:hover {
+        color: #9bc4ed;
+        font-size: 1.6rem;
+        } 
+        
+        .social-icons {
+            margin-top: 1vh;
     display: flex;
     justify-content: center;
     gap: 2vh;
-}
-
-.social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5vh;
-    height: 5vh;
-    text-decoration: none;
-    color: white;
-    border-radius: 50%;
-    font-size: 3vh;
-    transition: background-color 0.3s ease;
-    filter: drop-shadow(5px 5px 10px #f0f0f0);
-}
-
-.social-icons a:hover {
-    background-color: #0077B5; /* LinkedIn blue */
-/* color: #fff; */
-/* } */
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    color: #555;
-    font-size: 20px;
-    margin: 0 10px;
-}
-
-.social-icons a:hover {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.logo img {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
-}
-
-.logo {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
+    }
+    
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 5vh;
+        height: 5vh;
+        text-decoration: none;
+        color: white;
+        border-radius: 50%;
+        font-size: 3vh;
+        transition: background-color 0.3s ease;
+        filter: drop-shadow(5px 5px 10px #f0f0f0);
+        }
+        
+        .social-icons a:hover {
+            background-color: #0077B5; /* LinkedIn blue */
+            /* color: #fff; */
+            /* } */
+            
+            .social-icons {
+                margin-top: 10px;
+            }
+            
+            .social-icons a {
+                color: #555;
+                font-size: 20px;
+                margin: 0 10px;
+            }
+            
+            .social-icons a:hover {
+                color: #007bff;
+                text-decoration: none;
+            }
+            
+            .logo img {
+                width: 60px;
+                height: 60px;
+                margin: 5px;
+            }
+            
+            .logo {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
     justify-self: center;
 }
 
 .logo header h5 {
     margin: 7px;
 }
- /*.main_contain {
+/*.main_contain {
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
-}*/ 
-/* ._main_contain { */
+    }*/ 
+    /* ._main_contain { */
     /* height: 100vh; */
-._main_contain {
-    /* height: 100vh; */
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    flex-direction: row;
-    margin-top: 5vh;
-    margin-bottom: 2vh;
-    justify-content: center;
-    align-content: center;
-}
-
-@media (max-width: 600px) {
     ._main_contain {
-        margin-bottom: 2vh;
+        /* height: 100vh; */
         display: flex;
         flex-wrap: wrap;
         flex: 1;
         flex-direction: row;
         margin-top: 5vh;
-        margin-bottom: 40px;
+        margin-bottom: 2vh;
         justify-content: center;
         align-content: center;
     }
-}
-._main_contain_club {
-    /* height: 100vh; */
-    display: flex;
-    flex-wrap: wrap;
+    
+    @media (max-width: 600px) {
+        ._main_contain {
+            margin-bottom: 2vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            flex-direction: row;
+            margin-top: 5vh;
+            margin-bottom: 40px;
+            justify-content: center;
+            align-content: center;
+        }
+    }
+    ._main_contain_club {
+        /* height: 100vh; */
+        display: flex;
+        flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
     margin-top: 5vh;
@@ -198,12 +199,12 @@ body::-webkit-scrollbar {
         flex: 3;
         flex-direction: row;
     }
-
+    
     .club_container img {
         width: 80%;
         height: 80%;
     }
-
+    
 }
 
 .circle-container {
@@ -251,9 +252,9 @@ body::-webkit-scrollbar {
     padding: 1vh 4vh;
     border-radius: 5px;
 }
-  
 
-  .loading {
+
+.loading {
     position: fixed;
     top: 0;
     left: 0;
