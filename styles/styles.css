@@ -249,7 +249,6 @@ body::-webkit-scrollbar {
 
   .card-body {
     background-color: rgb(255, 166, 33);
-    /* padding: 20px; Add padding for content */
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 15px;
