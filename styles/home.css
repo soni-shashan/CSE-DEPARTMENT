@@ -70,6 +70,7 @@
         margin-left: 5px;
         margin-right: 5px;  
         border: solid;
+         margin-top: -50px; 
     }
     .card h1 {
         font-size: 35px;
@@ -78,6 +79,61 @@
         text-shadow: 0px 0px 1px;
         position: relative;
 
+    }
+    .table{
+        scale: 0.8;
+        margin-left: 10px;
+        /* display: table-row-group; */
+       
+
+    }
+    .career{
+        scale: 0.4;
+        p{
+        margin-left: -10vh;
+         margin-right:40px; 
+         font-size: 1rem;
+        }
+        ul{
+            font-size: .8rem;
+        }
+    }
+    .INDUSTRY{
+        scale: 0.8;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-bottom: 30px;
+        margin-left: 5px;
+        margin: -20px;
+        margin-right: 5px;
+        flex:left;
+        display: inline-block;
+        p{
+            font-size:.9rem;
+        }
+        
+        .card-img2{
+            width: 80px;
+            height: 50px;
+            font-size: medium;
+        }
+    }
+    
+    .bestpractice{
+        scale: 1;
+        margin-top: 0px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 10px; 
+        display: inline-block; 
     }
     .card p {
         font-size: 1rem;
@@ -128,24 +184,64 @@
 .card-img2{
     width: 180px;
     height: 70px;
-    font-size: ;
+    font-size: large;
 }
-h2{
-    margin-left: 80px;
+h2,h4{
+    margin-left: 40px;
     font: bold;
     text-decoration: dotted;
 }
 .bestpractice{
-    margin-top: 10px;
+    margin-top: 0px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    max-width: 100vh;
     text-align: center;
     font-size: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    margin-left: 35px; 
+     margin-right: 80px;
+    display: inline-block;  
+}
+.INDUSTRY{
+    margin-top: 0px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 50vh;
+    text-align:center;
+    font-size: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    margin-left: 35px;
+    margin-right: 80px;
+    display: inline-block;  
+}
+.Student{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 10PX
+    text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 30px;
     margin-left: 80px;
     margin-right: 80px;
-    display: inline-block;  
+    display: inline-block; 
+    img{
+        width: 180px;
+        height: 90px;
+    }
+}
+.career{
+    p{
+     margin-left: 80PX;
+     margin-right:20vh; 
+     font-size: 1.5rem;
+    }
+    ul{
+        font-size: 1.3rem;
+    }
 }
