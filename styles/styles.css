@@ -169,6 +169,29 @@ body::-webkit-scrollbar {
     }
 }
 
+.club_container {
+    display: inline-flex;
+    flex-wrap: inherit;
+    flex: 3;
+    flex-direction: row;
+}
+
+.club_container img {
+    width: 40%;
+    height: 40%;
+}
+
+.main_club {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border: 2px;
+    border-color: black;
+    border-radius: 20px;
+    border-style: dashed;
+    padding: 2%;
+}
 
 
 
