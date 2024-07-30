@@ -10,19 +10,22 @@
         text-align: center;
         margin-top: 30px;
     }
+    /* max-width: 200px; */
 }
 .card{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 200vh;
+    /* max-width: 200vh; */
+    width:200vh;
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 30px;
     margin-left: 80px;
     margin-right: 80px;
-    display: inline-block;  
+    display: inline-block; 
+    /* height: 30vh;  */
 }
 .card h1 {
     font-size: 35px;
@@ -99,7 +102,7 @@
     }
 
     .career .activities {
-      /
+      
         margin-left: 10px;
     }
     .INDUSTRY{
@@ -234,13 +237,14 @@ h4{
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
+    /* max-width: 200vh; */
     font-size: 1.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 20px;
     margin-left: 35px; 
-     margin-right: 80px;
-    display: inline-block;  
+    margin-right: 80px;
+    /* display: inli;   */
 }
 .INDUSTRY{
     margin-top: 0px;
@@ -261,12 +265,12 @@ h4{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 10PX
-    text-align: left;
+    /* max-width: 10px; */
+    text-align : left;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left : 80px;
+    margin-right : 80px;
     display: inline-block; 
     img{
         width: 180px;
