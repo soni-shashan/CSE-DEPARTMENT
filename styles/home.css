@@ -17,8 +17,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    /* max-width: 200vh; */
-    width:200vh;
+    max-width: 200vh;
+    /* width:200vh; */
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 30px;
