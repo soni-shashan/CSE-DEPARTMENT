@@ -52,30 +52,11 @@
           <li class="nav-item">
             <a class="nav-link" href="../facultyArea/">Faculty Area</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Student Corner
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" id="uniPapper" href="#">University Papers</a></li>
-              <li><a class="dropdown-item" id="examResult" href="#">Exam Result</a></li>
-              <li><a class="dropdown-item" id="feePay" href="#">Fees Payments</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              NewsLetter
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="../newsletter/acdemic/">Academic</a></li>
-              <li><a class="dropdown-item" href="../newsletter/coCuricular/">Co-curricular</a></li>
-            </ul>
-          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="../download/index.html">Downloads</a>
+            <a class="nav-link" href="https://www.charusat.ac.in/student-corner" target="_blank">Student Corner</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="../devlopers/">Developers</a>
           </li>
@@ -94,46 +75,11 @@
       innovation meets excellence.</p>
   </header>
   <div class="_main_content_event">
-    <div class="event"> 
+    <div class="event">
       <div class="container mt-4 mb-0">
-        <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../home_image/CSPIT CSE.jpg" class="d-block w-100" alt="Event Photo 1">
-            </div>
-            <div class="carousel-item">
-              <img src="../home_image/DSC_0072.JPG" class="d-block w-100" alt="Event Photo 2">
-            </div>
-            <div class="carousel-item">
-              <img src="../home_image/DSC_1338.JPG" class="d-block w-100" alt="Event Photo 3">
-            </div>
-            <div class="carousel-item">
-              <img src="../home_image/IMG-20220314-WA0010.jpg" class="d-block w-100" alt="Event Photo 4">
-            </div>
-            <div class="carousel-item">
-              <img src="../home_image/IMG_0115.jpg" class="d-block w-100" alt="Event Photo 5">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="container">
-        <div class="card  bg-light">
-          <div class="card-body">
-            <h5 class="card-title">Event Name</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum eros.
-              Integer feugiat magna et ante facilisis, sed posuere erat lacinia. Cras vitae magna ac tortor feugiat
-              viverra.</p>
-          </div>
-        </div>
-      </div>
+        <ul id="eventsList"></ul>
+    </div>
+
     </div>
   </div>
   <footer class="bg-dark text-white text-center py-3">
@@ -141,6 +87,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <script src="../admin/script_event.js" type="module"></script>
+  </body>
 
 </html>
