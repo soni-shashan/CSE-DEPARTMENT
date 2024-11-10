@@ -38,7 +38,8 @@ if (sessionStorage.getItem('username')) {
     name=name.replace("_"," ");
     name=capitalizeFirstLetter(name);
     console.log(name);
-    document.getElementById('welcome_admin').innerText =name +"\nWelcome To Admin Panel";
+    document.getElementById('welcome_admin').innerText ="Welcome to the Admin Panel!";
+    document.getElementById('name').innerText ='Dear '+name+',';
 } else {
     window.location.href = 'index.html'; 
 }
